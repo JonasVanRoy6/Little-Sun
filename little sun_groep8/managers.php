@@ -1,7 +1,7 @@
 <?php
 
 
-include_once ("adminhome.php");
+include_once ("managerhome.php");
 
 
 ?>

@@ -49,7 +49,7 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
 				$_SESSION['name'] = $row['name'];
 				$_SESSION['id'] = $row['id'];
 				// Als het wachtwoord "admin" is, doorsturen naar de admin-pagina
-				header("Location: accounts.php");
+				header("Location: manager.php");
 				exit();
 			} else {
 				// Anders doorsturen naar de normale homepagina
