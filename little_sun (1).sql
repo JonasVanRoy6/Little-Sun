@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.2
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Gegenereerd op: 12 mei 2024 om 21:35
--- Serverversie: 5.7.24
--- PHP-versie: 8.0.1
+-- Host: 127.0.0.1
+-- Gegenereerd op: 18 mei 2024 om 13:55
+-- Serverversie: 10.4.32-MariaDB
+-- PHP-versie: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,7 +32,7 @@ CREATE TABLE `clock` (
   `user_name` varchar(255) NOT NULL,
   `action` enum('clock_in','clock_out') NOT NULL,
   `timestamp` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `clock`
@@ -50,7 +50,7 @@ INSERT INTO `clock` (`id`, `user_name`, `action`, `timestamp`) VALUES
 
 CREATE TABLE `locations` (
   `id` int(11) NOT NULL,
-  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+  `name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -74,7 +74,7 @@ INSERT INTO `locations` (`id`, `name`) VALUES
 CREATE TABLE `location_users` (
   `id` int(11) NOT NULL,
   `location_id` int(11) NOT NULL,
-  `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+  `username` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -102,9 +102,9 @@ INSERT INTO `location_users` (`id`, `location_id`, `username`) VALUES
 --
 
 CREATE TABLE `managers` (
-  `manager_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+  `manager_name` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -120,7 +120,7 @@ CREATE TABLE `taken` (
   `task_description` varchar(255) DEFAULT NULL,
   `task_start_time` time DEFAULT NULL,
   `task_end_time` time DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `taken`
@@ -145,8 +145,8 @@ CREATE TABLE `time_off` (
   `user_id` int(11) NOT NULL,
   `date` date NOT NULL,
   `reason` varchar(255) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `time_off`
@@ -169,7 +169,7 @@ CREATE TABLE `users` (
   `user_name` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `users`
@@ -183,7 +183,8 @@ INSERT INTO `users` (`id`, `user_name`, `password`, `name`) VALUES
 (13, 'bob', '81dc9bdb52d04dc20036dbd8313ed055', 'bob'),
 (14, 'mike', '81dc9bdb52d04dc20036dbd8313ed055', 'mike'),
 (15, 'Emiel', '81dc9bdb52d04dc20036dbd8313ed055', 'Emiel Van Gorpen'),
-(16, 'manager', '1d0258c2440a8d19e716292b231e3190', 'manager');
+(16, 'manager', '1d0258c2440a8d19e716292b231e3190', 'manager'),
+(21, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin');
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -264,7 +265,7 @@ ALTER TABLE `time_off`
 -- AUTO_INCREMENT voor een tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- Beperkingen voor geëxporteerde tabellen

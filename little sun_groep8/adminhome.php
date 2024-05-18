@@ -20,6 +20,7 @@
             <a href="admin.php">Create Hub location</a>
             <a href="managers.php">Create Hub Managers</a>
             <a href="test.php">test</a>
+            <a href="admintask.php">task allocator</a>
 
 
 
