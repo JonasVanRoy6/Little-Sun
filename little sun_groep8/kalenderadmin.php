@@ -1,7 +1,7 @@
 <?php
 // Databaseverbinding
 include_once ("db_conn.php");
-include_once ("managerhome.php");
+
 
 // Bereken de start- en einddatum van de huidige week
 $current_date = date('Y-m-d');
@@ -140,7 +140,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
     <header>
-        <!-- header content -->
+        <header>
+            <nav class="vertical-nav">
+                <div class="logo">
+                    <img src="images/logo.png" alt="Logo">
+                </div>
+                <ul>
+                    <li><a href="accounts.php">Admin</a></li>
+                    <li><a href="admin.php">Create Hub location</a></li>
+                    <li><a href="managers.php">Create Hub Managers</a></li>
+                    <li><a href="test.php">test</a></li>
+                    <li><a href="admintask.php">task allocator</a></li>
+                    <li><a href="kalenderadmin.php">kalender</a></li>
+                </ul>
+                <button class="logout-button" onclick="window.location.href='logout.php'">Logout</button>
+            </nav>
+        </header>
     </header>
 
     <div class="week-navigation">

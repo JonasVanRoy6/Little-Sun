@@ -34,7 +34,7 @@ $result_users = $conn->query($sql_users);
 
 <head>
     <title>Assign Task</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="CSS/manager.css">
 </head>
 
 <body>
