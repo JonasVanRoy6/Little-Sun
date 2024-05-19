@@ -1,11 +1,30 @@
-<?php
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Accounts</title>
+    <style>
+        /* CSS om de inhoud van de pagina te centreren */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
 
+        .container {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+<?php
 include "db_conn.php";
 include_once ("adminhome.php");
 
-?>
-
-<?php
 // Stap 2: Haal de gegevens van de accounts op uit de database
 $sql = "SELECT id, user_name, password, name FROM users";
 $result = $conn->query($sql);
@@ -26,3 +45,8 @@ if ($result->num_rows > 0) {
 
 $conn->close();
 ?>
+
+</div>
+
+</body>
+</html>

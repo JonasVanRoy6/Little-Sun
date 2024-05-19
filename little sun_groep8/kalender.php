@@ -95,7 +95,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html>
 <head>
     <title>Task Calendar</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="CSS/kalender.css">
     <style>
         .week-calendar {
             display: flex;
@@ -128,6 +128,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 
     <div class="week-calendar">
+        <h2>Kalender</h2>
         <?php
         // Loop through each day of the week
         $current_date = $start_date;
@@ -136,13 +137,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (isset($time_off_dates[$current_date])) {
                 // Display time-off with reason
                 echo "<div class='day time-off'>";
-                echo "<h3>Time-off - " . $current_date . "</h3>";
+                echo "<h3>" . date('l', strtotime($current_date)) . "<li>$current_date</li>" . "</h3>";
+                echo "<h3>Time-off</h3>";
                 echo "<p>Reden: " . $time_off_dates[$current_date] . "</p>";
                 echo "</div>";
             } else {
                 // Display regular day with tasks
                 echo "<div class='day'>";
-                echo "<h3>" . date('l', strtotime($current_date)) . " - " . $current_date . "</h3>";
+                echo "<h3>" . date('l', strtotime($current_date)) . "<li>$current_date</li>" . "</h3>";
 
                 // Display tasks for the current day
                 foreach ($tasks_per_day[$current_date] as $task) {
@@ -169,19 +171,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <!-- Formulier voor het toevoegen van time-off -->
     <form action="" method="post">
+    <h2>Agenda Punt</h2>
         <label for="user">Naam:</label>
         <input type="text" id="user" name="user" required><br>
         <label for="date">Datum:</label>
         <input type="date" id="date" name="date" required><br>
         <label for="reason">Reden:</label>
         <input type="text" id="reason" name="reason" required><br>
-        <button type="submit">Voeg Time-Off Toe</button>
-    </form>
-
-        <form action="" method="post">
+        <button class="button" type="submit">Voeg Time-Off Toe</button>
+        <br>
+        <br>
+        <br>
         <label for="user">Naam:</label>
         <input type="text" id="user" name="user" required><br>
-        <button type="submit" name="clock_action" value="clock_in">Klok In</button>
+        <button class="button2" type="submit" name="clock_action" value="clock_in">Klok In</button>
         <button type="submit" name="clock_action" value="clock_out">Klok Uit</button>
     </form>
         

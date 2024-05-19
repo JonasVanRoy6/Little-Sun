@@ -9,27 +9,23 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
      <html>
 
      <head>
-          <title>HOME</title>
-          <link rel="stylesheet" type="text/css" href="style.css">
-
+          <title>Home</title>
+          <link rel="stylesheet" type="text/css" href="CSS/home.css">
      </head>
 
      <body>
 
           <header>
-
-               <input type="checkbox" id="menu-toggle" class="menu-toggle">
-               <label for="menu-toggle" class="menu-toggle-label">&#9776;</label>
-               <nav class="menu">
-                    <a href="home.php">Home</a>
-                    <a href="accounts.php"><?php echo $_SESSION['name']; ?></a>
-                    <a href="logout.php">Logout</a>
-
-
-
+               <nav class="vertical-nav">
+                    <div class="logo">
+                         <img src="images/logo.png" alt="Logo">
+                    </div>
+                    <ul>
+                         <li><a href="home.php">Home</a></li>
+                         <li><a href="accounts.php"><?php echo $_SESSION['name']; ?></a></li>
+                    </ul>
+                    <button class="logout-button" onclick="window.location.href='logout.php'">Logout</button>
                </nav>
-
-
           </header>
 
           <!-- Plaats hier de rest van je inhoud -->

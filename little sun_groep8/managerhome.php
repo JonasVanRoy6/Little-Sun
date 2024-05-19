@@ -3,21 +3,21 @@
 
 <head>
     <title>Manager Home</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="CSS/managerhome.css">
 </head>
 
 <body>
-
-    <header>
-        <input type="checkbox" id="menu-toggle" class="menu-toggle">
-        <label for="menu-toggle" class="menu-toggle-label">&#9776;</label>
-        <nav class="menu">
-            <a href="manager.php">Manager</a>
-            <a href="kalender.php">Kalender</a>
-            <a href="logout.php">Logout</a>
-            <a href="test.php">test</a>
-        </nav>
-    </header>
+    <nav class="vertical-nav">
+        <div class="logo">
+            <img src="images/logo.png" alt="Logo">
+        </div>
+        <ul>
+            <li><a href="manager.php">Manager</a></li>
+            <li><a href="kalender.php">Kalender</a></li>
+            <li><a href="test.php">test</a></li>
+        </ul>
+        <button class="logout-button" onclick="window.location.href='logout.php'">Logout</button>
+    </nav>
 
     <script>
         // JavaScript om het menu te laten verschijnen/verdwijnen wanneer de checkbox wordt aangevinkt/uitgevinkt

@@ -2,14 +2,17 @@
 <html>
 
 <head>
-	<title>LOGIN</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Login</title>
+	<link rel="stylesheet" type="text/css" href="CSS/index.css">
+	<div class="black-bar">
+	<img src="images/logo.png" alt="Logo" class="logo">
+	</div>
 </head>
 
 <body>
 	<div class="signup">
 		<form action="login.php" method="post">
-			<h2>LOGIN</h2>
+			<h2>Login</h2>
 			<?php if (isset($_GET['error'])) { ?>
 				<p class="error"><?php echo $_GET['error']; ?></p>
 			<?php } ?>

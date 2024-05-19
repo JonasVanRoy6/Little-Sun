@@ -10,13 +10,11 @@ include_once ("adminhome.php");
 <html>
 
 <head>
-    <title>SIGN UP</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Sign Up</title>
+    <link rel="stylesheet" type="text/css" href="CSS/admin.css">
 </head>
 
 <body>
-
-
     <div class="signup">
         <form action="location-add.php" method="post">
             <h2>Create Hub Location</h2>

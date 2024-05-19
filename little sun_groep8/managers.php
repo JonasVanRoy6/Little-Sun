@@ -11,8 +11,8 @@ include_once ("managerhome.php");
 <html>
 
 <head>
-    <title>SIGN UP</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Sign Up</title>
+    <link rel="stylesheet" type="text/css" href="CSS/managers.css">
 </head>
 
 <body>

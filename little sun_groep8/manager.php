@@ -33,33 +33,45 @@ $result_users = $conn->query($sql_users);
 <html>
 <head>
     <title>Assign Task</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="CSS/manager.css">
 </head>
 <body>
     <div class="assign-task">
-        <h2>Assign Task</h2>
         <form action="manager.php" method="post">
-            <label>Select User:</label>
-            <select name="user_id">
-                <?php
-                // Itereer door de gebruikers en genereer de opties voor de selectbox
-                if ($result_users->num_rows > 0) {
-                    while ($row = $result_users->fetch_assoc()) {
-                        echo "<option value='" . $row['id'] . "'>" . $row['user_name'] . "</option>";
-                    }
-                }
-                ?>
-            </select><br>
+            <h2>Assign task</h2>
+            <div class="input-group">
+                <div class="input-group-item">
+                    <label>Select User:</label>
+                    <select name="user_id">
+                        <?php
+                        // Itereer door de gebruikers en genereer de opties voor de selectbox
+                        if ($result_users->num_rows > 0) {
+                            while ($row = $result_users->fetch_assoc()) {
+                                echo "<option value='" . $row['id'] . "'>" . $row['user_name'] . "</option>";
+                            }
+                        }
+                        ?>
+                    </select><br>
+                </div>
 
-            <label>Task Date:</label>
-            <input type="date" name="task_date" required><br>
+                <div class="input-group-item">
+                    <label>Task Date:</label>
+                    <input type="date" name="task_date" required><br>
+                </div>
+            </div>
 
-            <label>Task Start Time:</label>
-            <input type="time" name="task_start_time" required><br>
+            <div class="input-group">
+                <div class="input-group-item">
+                    <label>Task Start Time:</label>
+                    <input type="time" name="task_start_time" required><br>
+                </div>
 
-            <label>Task End Time:</label>
-            <input type="time" name="task_end_time" required><br>
-
+                <div class="input-group-item">
+                    <label>Task End Time:</label>
+                    <input type="time" name="task_end_time" required><br>
+                </div>
+            </div>
+            
             <label>Task Description:</label>
             <textarea name="task_description" rows="4" cols="50" required></textarea><br>
 
@@ -67,38 +79,43 @@ $result_users = $conn->query($sql_users);
         </form>
     </div>
 
-    <!-- Toegevoegde sectie om toegewezen taken weer te geven -->
-    <div class="assigned-tasks">
-        <h2>Assigned Tasks</h2>
-        <table>
-            <tr>
-                <th>User</th>
-                <th>Task Date</th>
-                <th>Task Description</th>
-                <th>Start Time</th>
-                <th>End Time</th>
-            </tr>
-            <?php
-            // Voeg de logica toe om de taken op te halen uit de database
-            $sql_tasks = "SELECT * FROM taken";
-            $result_tasks = $conn->query($sql_tasks);
 
-            // Itereer door de resultaten en toon de taken in de tabel
-            if ($result_tasks->num_rows > 0) {
-                while ($row = $result_tasks->fetch_assoc()) {
-                    echo "<tr>";
-                    echo "<td>" . $row["user_id"] . "</td>";
-                    echo "<td>" . $row["task_date"] . "</td>";
-                    echo "<td>" . $row["task_description"] . "</td>";
-                    echo "<td>" . $row["task_start_time"] . "</td>";
-                    echo "<td>" . $row["task_end_time"] . "</td>";
-                    echo "</tr>";
+
+
+
+    <div class="assigned-tasks">
+        <div class="assigned-tasks-content">
+            <h2>Assigned tasks</h2>
+            <table>
+                <tr>
+                    <th>User</th>
+                    <th>Task Date</th>
+                    <th>Task Description</th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
+                </tr>
+                <?php
+                // Voeg de logica toe om de taken op te halen uit de database
+                $sql_tasks = "SELECT * FROM taken";
+                $result_tasks = $conn->query($sql_tasks);
+
+                // Itereer door de resultaten en toon de taken in de tabel
+                if ($result_tasks->num_rows > 0) {
+                    while ($row = $result_tasks->fetch_assoc()) {
+                        echo "<tr>";
+                        echo "<td>" . $row["user_id"] . "</td>";
+                        echo "<td>" . $row["task_date"] . "</td>";
+                        echo "<td>" . $row["task_description"] . "</td>";
+                        echo "<td>" . $row["task_start_time"] . "</td>";
+                        echo "<td>" . $row["task_end_time"] . "</td>";
+                        echo "</tr>";
+                    }
+                } else {
+                    echo "<tr><td colspan='5'>No tasks assigned</td></tr>";
                 }
-            } else {
-                echo "<tr><td colspan='5'>No tasks assigned</td></tr>";
-            }
-            ?>
-        </table>
+                ?>
+            </table>
+        </div>
     </div>
 </body>
 </html>

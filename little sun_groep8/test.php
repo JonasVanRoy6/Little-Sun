@@ -59,23 +59,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Locations</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="CSS/test.css">
 </head>
 
 <body>
-    <h1>Locations</h1>
     <ul>
         <?php
         // Toon de lijst van locaties
         foreach ($locationsQuery as $location) {
             ?>
             <li>
-                <?php echo $location['name']; ?>
                 <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>"> <!-- Zorg voor de juiste actie -->
+                    <h2><?php echo $location['name']; ?></h2>
                     <input type="hidden" name="location_id" value="<?php echo $location['id']; ?>">
+                    <label>User Name</label> <!-- Locatienaam binnen het formulier -->
 
-                    <input type="text" name="username" placeholder="Username" required> <!-- Zorg voor invoer -->
-                    <button type="submit">Add User</button>
+                    <input type="text" name="username" placeholder="User Name" required> <!-- Zorg voor invoer -->
+                    <button type="submit">Add User</button> <!-- Button binnen het formulier -->
                 </form>
             </li>
             <?php

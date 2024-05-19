@@ -3,30 +3,25 @@
 <html>
 
 <head>
-    <title>HOME</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="CSS/adminhome.css">
 
 </head>
 
 <body>
-
     <header>
-
-        <input type="checkbox" id="menu-toggle" class="menu-toggle">
-        <label for="menu-toggle" class="menu-toggle-label">&#9776;</label>
-        <nav class="menu">
-            <a href="accounts.php">Admin</a>
-            <a href="logout.php">Logout</a>
-            <a href="admin.php">Create Hub location</a>
-            <a href="managers.php">Create Hub Managers</a>
-            <a href="test.php">test</a>
-            <a href="admintask.php">task allocator</a>
-
-
-
+        <nav class="vertical-nav">
+                <div class="logo">
+                    <img src="images/logo.png" alt="Logo">
+                </div>
+                <ul>
+                    <li><a href="accounts.php">Admin</a></li>
+                    <li><a href="admin.php">Create Hub location</a></li>
+                    <li><a href="managers.php">Create Hub Managers</a></li>
+                    <li><a href="test.php">test</a></li>
+                </ul>
+                <button class="logout-button" onclick="window.location.href='logout.php'">Logout</button>
         </nav>
-
-
     </header>
 
     <!-- Plaats hier de rest van je inhoud -->

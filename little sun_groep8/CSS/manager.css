@@ -1,0 +1,136 @@
+.assign-task {
+    width: 500px;
+    padding: 30px;
+    background: #fff;
+    border-radius: 5px;
+    margin: 30px auto;
+}
+
+.assign-task h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.assign-task input,
+.assign-task select,
+.assign-task textarea {
+    display: block;
+    border: 2px solid #ccc;
+    width: 95%;
+    padding: 10px;
+    margin: 10px auto;
+    border-radius: 5px;
+}
+
+.assign-task label {
+    color: #888;
+    font-size: 18px;
+    padding: 10px;
+    display: block;
+}
+
+.assign-task button {
+    background: black;
+    padding: 10px 30px;
+    color: #fff;
+    border-radius: 20px;
+    margin-right: 10px;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto 0;
+}
+
+.assign-task button:hover {
+    background-color: #FFDD00;
+    color: black;
+}
+
+.assign-task .error,
+.assign-task .success {
+    padding: 10px;
+    width: 95%;
+    border-radius: 5px;
+    margin: 20px auto;
+}
+
+.assign-task .error {
+    background: #F2DEDE;
+    color: #A94442;
+}
+
+.assign-task .success {
+    background: #D4EDDA;
+    color: #40754C;
+}
+
+.assign-task h1 {
+    text-align: center;
+    color: #fff;
+}
+
+.assign-task .ca {
+    font-size: 15px;
+    display: inline-block;
+    padding: 10px;
+    text-decoration: none;
+    color: #444;
+}
+
+.assign-task .ca:hover {
+    text-decoration: underline;
+}
+
+.input-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.input-group-item {
+    width: calc(50% - 5px);
+    margin-right: 10px;
+    box-sizing: border-box;
+}
+
+.input-group-item:last-child {
+    margin-right: 0;
+}
+
+.assigned-tasks {
+    width: 500px;
+    padding: 30px;
+    background: #fff;
+    border-radius: 5px;
+    margin: 30px auto;
+}
+
+.assigned-tasks h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.assigned-tasks table {
+    width: 100%;
+}
+
+.assigned-tasks th,
+.assigned-tasks td {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.assigned-tasks th {
+    background-color: #f2f2f2;
+}
+
+.assigned-tasks td {
+    background-color: #fff;
+}
+
+.assigned-tasks .assigned-tasks-content {
+    background: #fff;
+    border-radius: 5px;
+    padding: 20px;
+}
