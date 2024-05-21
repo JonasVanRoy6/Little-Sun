@@ -4,12 +4,10 @@ include_once("adminhome.php");
 
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Sign Up</title>
     <link rel="stylesheet" type="text/css" href="CSS/managers.css">
 </head>
-
 <body>
     <div class="signup">
         <form action="signup-check.php" method="post">
@@ -53,5 +51,4 @@ include_once("adminhome.php");
         </form>
     </div>
 </body>
-
 </html>

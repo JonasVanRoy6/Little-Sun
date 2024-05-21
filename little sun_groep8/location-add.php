@@ -48,8 +48,8 @@ $conn->close();
 </head>
 
 <body>
-    <h1>Add Location</h1>
     <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+    <h2>Add Location</h2>
         <label for="location_name">Location Name:</label>
         <input type="text" id="location_name" name="location_name" required>
         <button type="submit">Add Location</button>

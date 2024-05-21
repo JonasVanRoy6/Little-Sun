@@ -135,6 +135,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         .time-off {
             background-color: lightgray;
         }
+
+        .time-off-hours {
+            width: 500px;
+            padding: 30px;
+            background: #fff;
+            border-radius: 5px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .time-off-hours h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 
@@ -232,7 +248,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <!-- footer content -->
     </footer>
 
-    <div>
+    <div class="time-off-hours">
         <h2>Total Time-Off Hours</h2>
         <p><?php echo $total_time_off_hours; ?> uur</p>
     </div>

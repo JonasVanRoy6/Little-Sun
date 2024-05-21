@@ -7,6 +7,21 @@
 </head>
 
 <body>
+    <header>
+        <section class="top-navigation">
+            <div class="menu-toggle-label" onclick="toggleMenu()">&#9776;</div>
+            <div class="logo">
+                <img src="images/logo.png" alt="Logo">
+            </div>
+        </section>
+        <nav class="menu">
+            <a href="manager.php">Assign Task</a>
+            <a href="kalender.php">Kalender</a>
+            <a href="test.php">Locations</a>
+            <button class="logout-button" onclick="window.location.href='logout.php'">Logout</button>
+        </nav>
+    </header>
+
     <nav class="vertical-nav">
         <div class="logo">
             <img src="images/logo.png" alt="Logo">
@@ -20,15 +35,10 @@
     </nav>
 
     <script>
-        // JavaScript om het menu te laten verschijnen/verdwijnen wanneer de checkbox wordt aangevinkt/uitgevinkt
-        document.getElementById("menu-toggle").addEventListener("change", function () {
+        function toggleMenu() {
             var menu = document.querySelector('.menu');
-            if (this.checked) {
-                menu.classList.add('show');
-            } else {
-                menu.classList.remove('show');
-            }
-        });
+            menu.classList.toggle('show');
+        }
     </script>
 </body>
 

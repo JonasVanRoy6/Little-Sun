@@ -1,0 +1,63 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 170vh;
+    margin: 0;
+    font-family: sans-serif;
+    background: #FFDD00;
+}
+
+.container {
+    text-align: center;
+    background: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 500px;
+}
+
+.account {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.account:last-child {
+    border-bottom: none;
+}
+
+.account-info {
+    display: inline-block;
+    text-align: left;
+    width: 70%;
+}
+
+.account-actions {
+    display: inline-block;
+    width: 25%;
+    text-align: right;
+}
+
+.account-actions form {
+    display: inline;
+}
+
+.account-actions input[type="submit"] {
+    background: black;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.account-actions input[type="submit"]:hover {
+    background-color: #FFDD00;
+    color: black;
+}
+
+h2 {
+    margin-bottom: 20px;
+}

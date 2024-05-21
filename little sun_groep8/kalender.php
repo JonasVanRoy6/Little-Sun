@@ -216,7 +216,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <!-- footer content -->
     </footer>
 
-    <div>
+    <div class="time-off-hours">
         <h2>Total Time-Off Hours</h2>
         <p><?php echo $total_time_off_hours; ?> uur</p>
     </div>
