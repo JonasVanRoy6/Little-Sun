@@ -44,6 +44,7 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Location</title>
+    <link rel="stylesheet" href="css/kalender.css">
 </head>
 
 <body>
@@ -54,12 +55,7 @@ $conn->close();
         <button type="submit">Add Location</button>
     </form>
 
-    <h2>Locations</h2>
-    <ul>
-        <?php foreach ($locations as $location): ?>
-            <li><?php echo $location['name']; ?></li>
-        <?php endforeach; ?>
-    </ul>
+
 </body>
 
 </html>

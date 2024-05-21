@@ -12,9 +12,9 @@
             <img src="images/logo.png" alt="Logo">
         </div>
         <ul>
-            <li><a href="manager.php">Manager</a></li>
+            <li><a href="manager.php">Assign Task</a></li>
             <li><a href="kalender.php">Kalender</a></li>
-            <li><a href="test.php">test</a></li>
+            <li><a href="test.php">Locations</a></li>
         </ul>
         <button class="logout-button" onclick="window.location.href='logout.php'">Logout</button>
     </nav>

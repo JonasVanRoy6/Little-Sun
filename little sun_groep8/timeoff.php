@@ -85,7 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <!-- Formulier voor het toevoegen van time-off -->
     <form action="" method="post">
-        <h2>Agenda Punt</h2>
+        <h2>Time Off</h2>
         <label for="user">Naam:</label>
         <input type="text" id="user" name="user" required><br>
         <label for="date">Datum:</label>

@@ -17,10 +17,10 @@
             <ul>
                 <li><a href="accounts.php">Admin</a></li>
                 <li><a href="manager.php">Assign Tasks</a></li>
-                <li><a href="admin.php">Create Hub location</a></li>
+                <li><a href="location-add.php">Create Hub location</a></li>
                 <li><a href="managers.php">Create Accounts</a></li>
-                <li><a href="test.php">test</a></li>
-                <li><a href="admintask.php">task allocator</a></li>
+                <li><a href="test.php">Locations</a></li>
+
                 <li><a href="kalenderadmin.php">kalender</a></li>
             </ul>
             <button class="logout-button" onclick="window.location.href='logout.php'">Logout</button>

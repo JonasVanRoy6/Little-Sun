@@ -2,9 +2,9 @@
 
 $sname = "localhost";
 $uname = "root";
-$password = "root";
+$password = "";
 
-$db_name = "little sun";
+$db_name = "littlesun";
 
 $conn = mysqli_connect($sname, $uname, $password, $db_name);
 
