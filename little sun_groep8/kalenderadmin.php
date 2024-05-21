@@ -147,8 +147,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
                 <ul>
                     <li><a href="accounts.php">Admin</a></li>
+                    <li><a href="manager.php">Assign Tasks</a></li>
                     <li><a href="admin.php">Create Hub location</a></li>
-                    <li><a href="managers.php">Create Hub Managers</a></li>
+                    <li><a href="managers.php">Create Accounts</a></li>
                     <li><a href="test.php">test</a></li>
                     <li><a href="admintask.php">task allocator</a></li>
                     <li><a href="kalenderadmin.php">kalender</a></li>

@@ -1,11 +1,6 @@
 <?php
-
-
-include_once ("managerhome.php");
-
-
+include_once("adminhome.php");
 ?>
-
 
 <!DOCTYPE html>
 <html>
@@ -18,7 +13,7 @@ include_once ("managerhome.php");
 <body>
     <div class="signup">
         <form action="signup-check.php" method="post">
-            <h2>Create Hub Managers</h2>
+            <h2>Create Accounts</h2>
             <?php if (isset($_GET['error'])) { ?>
                 <p class="error"><?php echo $_GET['error']; ?></p>
             <?php } ?>
@@ -41,15 +36,20 @@ include_once ("managerhome.php");
                 <input type="text" name="uname" placeholder="User Name"><br>
             <?php } ?>
 
-
             <label>Password</label>
             <input type="password" name="password" placeholder="Password"><br>
 
             <label>Re Password</label>
             <input type="password" name="re_password" placeholder="Re_Password"><br>
 
-            <button type="submit">Sign Up</button>
+            <label>Role</label>
+            <select name="role">
+                <option value="user">User</option>
+                <option value="manager">Manager</option>
+                <option value="admin">Admin</option>
+            </select><br>
 
+            <button type="submit">Sign Up</button>
         </form>
     </div>
 </body>

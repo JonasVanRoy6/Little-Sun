@@ -22,12 +22,13 @@ if ($result_user_id->num_rows > 0) {
      die("Gebruiker niet gevonden.");
 }
 
-// Bereken de start- en einddatum van de huidige week
-$current_date = date('Y-m-d');
+// Bereken de start- en einddatum van de week op basis van de 'week_offset' parameter
+$week_offset = isset($_GET['week_offset']) ? intval($_GET['week_offset']) : 0;
+$current_date = date('Y-m-d', strtotime("$week_offset week"));
 $start_date = date('Y-m-d', strtotime('last monday', strtotime($current_date)));
 $end_date = date('Y-m-d', strtotime('next sunday', strtotime($current_date)));
 
-// Query om taken op te halen voor de huidige week van de ingelogde gebruiker
+// Query om taken op te halen voor de geselecteerde week van de ingelogde gebruiker
 $sql_tasks = "SELECT * FROM taken WHERE user_id = $user_id AND task_date BETWEEN '$start_date' AND '$end_date'";
 $result_tasks = $conn->query($sql_tasks);
 
@@ -132,6 +133,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           .time-off {
                background-color: lightgray;
           }
+
+          .week-navigation {
+               text-align: center;
+               margin-bottom: 20px;
+          }
+
+          .week-navigation button {
+               padding: 10px 20px;
+               margin: 0 10px;
+               cursor: pointer;
+          }
      </style>
 </head>
 
@@ -151,7 +163,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
      </header>
 
      <div class="week-navigation">
-          <!-- navigatieknoppen -->
+          <a href="home.php?week_offset=<?php echo $week_offset - 1; ?>"><button>Vorige week</button></a>
+          <a href="home.php?week_offset=<?php echo $week_offset + 1; ?>"><button>Volgende week</button></a>
      </div>
 
      <div class="week-calendar">

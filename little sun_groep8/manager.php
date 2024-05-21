@@ -1,5 +1,24 @@
 <?php
-include_once("managerhome.php"); // Inclusief de manager startpagina
+session_start();
+
+// Controleer of de gebruiker is ingelogd
+if (!isset($_SESSION['user_name'])) {
+    // Als de gebruiker niet is ingelogd, stuur ze terug naar de inlogpagina
+    header("Location: login.php");
+    exit();
+}
+
+// Bepaal de rol van de ingelogde gebruiker
+$role = $_SESSION['role'];
+
+// Controleer of de rol van de gebruiker admin is
+if ($role === 'admin') {
+    // Inclusief de admin navigatie
+    include_once("adminhome.php");
+} else {
+    // Inclusief de manager navigatie
+    include_once("managerhome.php");
+}
 
 // Databaseverbinding
 include_once("db_conn.php");
@@ -78,10 +97,6 @@ $result_users = $conn->query($sql_users);
             <button type="submit">Assign Task</button>
         </form>
     </div>
-
-
-
-
 
     <div class="assigned-tasks">
         <div class="assigned-tasks-content">
